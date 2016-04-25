@@ -150,7 +150,7 @@ function preventParentSelection(e) {
 }
 
 $(function(){
-    $("pre[lang]").each(function() {
+    $("pre[data-lang=Before]").each(function() {
         if (this.parentNode.className.indexOf("k-content") >= 0) {
             return;
         }
@@ -158,7 +158,7 @@ $(function(){
         var langs = $(this).nextUntil(":not(pre)", "pre").add(this);
 
         var tabs = $.map(langs, function(item) {
-            return $("<li>").text($(item).attr("lang"));
+            return $("<li>").text($(item).attr("data-lang"));
         });
 
         if (tabs.length < 2) {
