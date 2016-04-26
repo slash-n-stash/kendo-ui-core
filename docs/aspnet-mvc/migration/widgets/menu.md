@@ -8,11 +8,11 @@ description: Documentation and code examples about server-side and client-side A
 
 ## Animations
 
-```Before
+```tab-Before
 Html.Telerik().Menu().Name("SampleMenu")
     .Effects(effects => effects.Slide())
 ```
-```After
+```tab-After
 Html.Kendo().Menu().Name("SampleMenu")
     .Animation(animation => animation
         .Open(open => open.FadeIn(FadeDirection.Down)
@@ -27,13 +27,13 @@ KendoUI Complete for ASP.NET MVC does not support action syntax i.e. “() => {}
 
 All widgets no longer have the OnLoad event. Please use **$(document).ready()** instead.
 
-```Before
+```tab-Before
 Html.Telerik().Menu().Name("Menu")
     .ClientEvents(events => events
         .OnChange(“change”)
     )
 ```
-```After
+```tab-After
 Html.Kendo().Menu().Name("Menu")
     .Events(events => events
         .Change(“change”)

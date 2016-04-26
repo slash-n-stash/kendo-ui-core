@@ -22,7 +22,7 @@ The example below demonstrates how to enable the Excel export functionality.
 
 ###### Example
 
-```Razor
+```tab-Razor
 @(Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
     .Name("grid")
     .ToolBar(tools => tools.Excel())
@@ -35,7 +35,7 @@ The example below demonstrates how to enable the Excel export functionality.
     )
 )
 ```
-```ASPX
+```tab-ASPX
 <%: Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
     .Name("grid")
     .ToolBar(tools => tools.Excel())
@@ -81,7 +81,7 @@ The example below demonstrates how to export all the data.
 
 ###### Example
 
-```Razor
+```tab-Razor
 @(Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
     .Name("grid")
     .ToolBar(tools => tools.Excel())
@@ -94,7 +94,7 @@ The example below demonstrates how to export all the data.
     )
 )
 ```
-```ASPX
+```tab-ASPX
 <%: Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
     .Name("grid")
     .ToolBar(tools => tools.Excel())
