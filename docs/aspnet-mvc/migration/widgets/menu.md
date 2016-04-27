@@ -1,43 +1,50 @@
 ---
 title: Menu
-page_title: API documentation for Kendo UI jQuery Menu control with ASP.NET MVC
-description: Documentation and code examples about server-side and client-side API for Kendo UI Menu component.
+page_title: Menu | Migrate from Telerik Extensions
+description: "Handle ASP.NET MVC server-side API for the Kendo UI Menu widget."
+slug: menu_migrationextensions_aspnetmvc
 ---
 
-# Server-side API
+# Menu Migration
 
-## Animations
+This article demonstrates the ASP.NET MVC server-side API for the Kendo UI Menu widget.
 
-```tab-Before
-Html.Telerik().Menu().Name("SampleMenu")
-    .Effects(effects => effects.Slide())
+## Server-Side API
+
+### Animations
+
+```tab-Previous
+
+    Html.Telerik().Menu().Name("SampleMenu")
+        .Effects(effects => effects.Slide())
 ```
-```tab-After
-Html.Kendo().Menu().Name("SampleMenu")
-    .Animation(animation => animation
-        .Open(open => open.FadeIn(FadeDirection.Down)
-    )
+```tab-Current
+    Html.Kendo().Menu().Name("SampleMenu")
+        .Animation(animation => animation
+            .Open(open => open.FadeIn(FadeDirection.Down)
+        )
 ```
 
-# Client-side API
+## Client-side API
 
-## Events
+### Events
 
-KendoUI Complete for ASP.NET MVC does not support action syntax i.e. “() => {}”.
+Kendo UI Complete for ASP.NET MVC does not support action syntax, that is, `“() => {}”`.
 
-All widgets no longer have the OnLoad event. Please use **$(document).ready()** instead.
+None of the widgets features the `OnLoad` event anymore. Use the `$(document).ready()` instead.
 
-```tab-Before
-Html.Telerik().Menu().Name("Menu")
-    .ClientEvents(events => events
-        .OnChange(“change”)
-    )
+```tab-Previous
+
+    Html.Telerik().Menu().Name("Menu")
+        .ClientEvents(events => events
+            .OnChange(“change”)
+        )
 ```
-```tab-After
-Html.Kendo().Menu().Name("Menu")
-    .Events(events => events
-        .Change(“change”)
-    )
+```tab-Current
+    Html.Kendo().Menu().Name("Menu")
+        .Events(events => events
+            .Change(“change”)
+        )
 ```
 
 ## See Also
