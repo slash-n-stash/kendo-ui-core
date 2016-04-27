@@ -81,19 +81,6 @@ The example below demonstrates how to export all the data.
 
 ###### Example
 
-```tab-Razor
-    @(Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
-        .Name("grid")
-        .ToolBar(tools => tools.Excel())
-        .Excel(excel => excel
-            .AllPages(true)
-        )
-        .DataSource(dataSource => dataSource
-            .Ajax()
-            .Read(read => read.Action("Products_Read", "Home"))
-        )
-    )
-```
 ```tab-ASPX
     <%: Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
         .Name("grid")
@@ -107,6 +94,20 @@ The example below demonstrates how to export all the data.
         )
     %>
 ```
+```tab-Razor
+    @(Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
+        .Name("grid")
+        .ToolBar(tools => tools.Excel())
+        .Excel(excel => excel
+            .AllPages(true)
+        )
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("Products_Read", "Home"))
+        )
+    )
+```
+
 ### Customize Excel Documents
 
 The [`excelExport`](/api/javascript/ui/grid#events-excelExport) event allows the customization of the generated Excel document. The `workbook` event argument exposes the generated Excel workbook configuration.
