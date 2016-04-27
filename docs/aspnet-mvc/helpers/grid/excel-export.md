@@ -22,31 +22,31 @@ The example below demonstrates how to enable the Excel export functionality.
 
 ###### Example
 
-```tab-Razor
-@(Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
-    .Name("grid")
-    .ToolBar(tools => tools.Excel())
-    .Excel(excel => excel
-        .FileName("Products.xlsx")
-    )
-    .DataSource(dataSource => dataSource
-        .Ajax()
-        .Read(read => read.Action("Products_Read", "Home"))
-    )
-)
-```
 ```tab-ASPX
-<%: Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
-    .Name("grid")
-    .ToolBar(tools => tools.Excel())
-    .Excel(excel => excel
-        .FileName("Products.xslx")
+    <%: Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
+        .Name("grid")
+        .ToolBar(tools => tools.Excel())
+        .Excel(excel => excel
+            .FileName("Products.xslx")
+        )
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("Products_Read", "Home"))
+        )
+    %>
+```
+```tab-Razor
+    @(Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
+        .Name("grid")
+        .ToolBar(tools => tools.Excel())
+        .Excel(excel => excel
+            .FileName("Products.xlsx")
+        )
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("Products_Read", "Home"))
+        )
     )
-    .DataSource(dataSource => dataSource
-        .Ajax()
-        .Read(read => read.Action("Products_Read", "Home"))
-    )
-%>
 ```
 
 To initiate the Excel export through code, call the [`saveAsExcel`](/api/javascript/ui/grid.html#methods-saveAsExcel) method.
@@ -82,31 +82,30 @@ The example below demonstrates how to export all the data.
 ###### Example
 
 ```tab-Razor
-@(Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
-    .Name("grid")
-    .ToolBar(tools => tools.Excel())
-    .Excel(excel => excel
-        .AllPages(true)
+    @(Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
+        .Name("grid")
+        .ToolBar(tools => tools.Excel())
+        .Excel(excel => excel
+            .AllPages(true)
+        )
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("Products_Read", "Home"))
+        )
     )
-    .DataSource(dataSource => dataSource
-        .Ajax()
-        .Read(read => read.Action("Products_Read", "Home"))
-    )
-)
 ```
 ```tab-ASPX
-<%: Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
-    .Name("grid")
-    .ToolBar(tools => tools.Excel())
-    .Excel(excel => excel
-        .AllPages(true)
-    )
-    .DataSource(dataSource => dataSource
-        .Ajax()
-        .Read(read => read.Action("Products_Read", "Home"))
-    )
-%>
-
+    <%: Html.Kendo().Grid<MvcApplication.Models.ProductViewModel>()
+        .Name("grid")
+        .ToolBar(tools => tools.Excel())
+        .Excel(excel => excel
+            .AllPages(true)
+        )
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("Products_Read", "Home"))
+        )
+    %>
 ```
 ### Customize Excel Documents
 
